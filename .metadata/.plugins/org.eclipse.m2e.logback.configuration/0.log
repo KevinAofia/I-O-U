@@ -1,1 +1,273 @@
 2022-07-08 16:36:12,872 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-08 16:36:27,842 [Worker-4: http://download.eclipse.org/m2e-wtp/releases/mars/1.2/compositeArtifacts.xml] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (org.apache.hc.core5.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443
+2022-07-13 15:18:53,161 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-13 21:50:59,334 [Worker-5: Creating project "practice"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.practice:practice:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\practice\pom.xml.
+2022-07-13 21:51:00,398 [Worker-5: Creating project "practice"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /practice/src/main/java
+2022-07-13 21:51:00,399 [Worker-5: Creating project "practice"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /practice/src/main/resources
+2022-07-13 21:51:00,400 [Worker-5: Creating project "practice"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /practice/src/test/java
+2022-07-13 21:51:00,401 [Worker-5: Creating project "practice"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /practice/src/test/resources
+2022-07-13 21:51:02,323 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 21:51:02,329 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 21:51:02,332 [Worker-9: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 21:51:02,333 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 21:53:09,301 [Worker-12: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\pom.xml
+2022-07-13 21:53:09,669 [Worker-12: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.practicetwo:ptwo:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\pom.xml.
+2022-07-13 21:53:10,772 [Worker-12: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ptwo/src/main/java
+2022-07-13 21:53:10,773 [Worker-12: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ptwo/src/test/java
+2022-07-13 21:53:11,657 [Worker-12: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2022-07-13 21:53:12,081 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:53:12,082 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 21:53:12,085 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:53:12,085 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 21:54:00,265 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.practicetwo:ptwo:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\pom.xml.
+2022-07-13 21:54:00,696 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:54:00,696 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 21:54:00,698 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:54:00,698 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 21:54:00,699 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ptwo
+2022-07-13 21:54:00,699 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ptwo
+2022-07-13 21:54:00,703 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:54:29,445 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2022-07-13 21:54:41,656 [Worker-5: Launching Executing install in C__Users_Kaofi_OneDrive_Desktop_SkillStorm_Workspace_I-O-U_ptwo] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo
+2022-07-13 21:54:41,671 [Worker-5: Launching Executing install in C__Users_Kaofi_OneDrive_Desktop_SkillStorm_Workspace_I-O-U_ptwo] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install -Dstyle.color=always
+2022-07-13 21:54:46,596 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:54:46,596 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 21:54:46,598 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:54:46,598 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 21:55:20,590 [Worker-5: Rebuilding] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 21:55:20,592 [Worker-5: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 21:55:20,594 [Worker-5: Rebuilding] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 21:55:20,596 [Worker-5: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 21:55:20,625 [Worker-5: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:55:20,626 [Worker-5: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 21:55:20,628 [Worker-5: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 21:55:20,629 [Worker-5: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 22:04:26,591 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:04:26,597 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:04:26,598 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:04:26,600 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:04:26,607 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:04:26,607 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 22:04:26,608 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:04:26,608 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 22:04:32,570 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:04:32,578 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:04:32,580 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:04:32,582 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:04:32,608 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:04:32,609 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 22:04:32,610 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:04:32,610 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 22:05:03,096 [Worker-17: Rebuilding] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:05:03,099 [Worker-17: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:05:03,100 [Worker-17: Rebuilding] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:05:03,104 [Worker-17: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:05:03,137 [Worker-17: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:05:03,138 [Worker-17: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\main\resources
+2022-07-13 22:05:03,140 [Worker-17: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:05:03,141 [Worker-17: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\ptwo\src\test\resources
+2022-07-13 22:07:51,829 [Worker-13: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\pom.xml
+2022-07-13 22:07:52,162 [Worker-13: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.test:test:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\pom.xml.
+2022-07-13 22:07:52,624 [Worker-13: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /test/src/main/java
+2022-07-13 22:07:52,625 [Worker-13: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /test/src/test/java
+2022-07-13 22:07:53,069 [Worker-13: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2022-07-13 22:07:53,336 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:07:53,337 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\src\main\resources
+2022-07-13 22:07:53,338 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:07:53,339 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\src\test\resources
+2022-07-13 22:08:08,314 [Worker-13: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.test:test:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\pom.xml.
+2022-07-13 22:08:08,744 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:08:08,744 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\src\main\resources
+2022-07-13 22:08:08,745 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:08:08,745 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\test\src\test\resources
+2022-07-13 22:08:08,746 [Worker-13: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of test
+2022-07-13 22:08:08,746 [Worker-13: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for test
+2022-07-13 22:08:08,749 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:10:52,040 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-13 22:25:25,222 [Worker-4: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\pom.xml
+2022-07-13 22:25:25,943 [Worker-4: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TEST:TEST:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\pom.xml.
+2022-07-13 22:25:26,786 [Worker-4: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /TEST/src/main/java
+2022-07-13 22:25:26,787 [Worker-4: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /TEST/src/test/java
+2022-07-13 22:25:27,480 [Worker-4: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2022-07-13 22:25:27,737 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:25:27,738 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\src\main\resources
+2022-07-13 22:25:27,740 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:25:27,740 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\src\test\resources
+2022-07-13 22:25:43,157 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TEST:TEST:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\pom.xml.
+2022-07-13 22:25:43,781 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:25:43,781 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\src\main\resources
+2022-07-13 22:25:43,783 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:25:43,784 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\src\test\resources
+2022-07-13 22:25:43,786 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TEST
+2022-07-13 22:25:43,787 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TEST
+2022-07-13 22:25:43,792 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-13 22:25:50,637 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: TEST:TEST:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\pom.xml.
+2022-07-13 22:25:51,047 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:25:51,048 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\src\main\resources
+2022-07-13 22:25:51,050 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:25:51,052 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\TEST\src\test\resources
+2022-07-13 22:25:51,052 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of TEST
+2022-07-13 22:25:51,053 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for TEST
+2022-07-13 22:25:51,055 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:34:38,796 [Worker-4: Creating project "CAN"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: CAN:CAN:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\CAN\pom.xml.
+2022-07-13 22:34:39,079 [Worker-4: Creating project "CAN"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CAN/src/main/java
+2022-07-13 22:34:39,080 [Worker-4: Creating project "CAN"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CAN/src/main/resources
+2022-07-13 22:34:39,080 [Worker-4: Creating project "CAN"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CAN/src/test/java
+2022-07-13 22:34:39,080 [Worker-4: Creating project "CAN"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CAN/src/test/resources
+2022-07-13 22:34:39,532 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:34:39,536 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 22:34:39,537 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 22:34:39,539 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:06:46,995 [Worker-9: Creating project "iou"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm.iou:iou:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\iou\pom.xml.
+2022-07-13 23:06:47,255 [Worker-9: Creating project "iou"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /iou/src/main/java
+2022-07-13 23:06:47,255 [Worker-9: Creating project "iou"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /iou/src/main/resources
+2022-07-13 23:06:47,256 [Worker-9: Creating project "iou"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /iou/src/test/java
+2022-07-13 23:06:47,256 [Worker-9: Creating project "iou"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /iou/src/test/resources
+2022-07-13 23:06:47,661 [Worker-16: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:06:47,663 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:06:47,665 [Worker-16: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:06:47,667 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:10:40,472 [Worker-15: Building] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Could not read pom.xml
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:579)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:547)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:503)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:349)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:303)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:151)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:182)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:156)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:103)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:88)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:198)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1024)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:254)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:311)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:400)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:403)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:514)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:462)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:544)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:161)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:255)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.apache.maven.model.io.ModelParseException: start tag not allowed in epilog but got d (position: END_TAG seen ...</version>\r\n</project>\r\n\r\n<d... @8:3) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:117)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:85)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:577)
+	... 24 common frames omitted
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: start tag not allowed in epilog but got d (position: END_TAG seen ...</version>\r\n</project>\r\n\r\n<d... @8:3) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEpilog(MXParser.java:1959)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1696)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1319)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3876)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:595)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:112)
+	... 26 common frames omitted
+2022-07-13 23:11:00,578 [Worker-20: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm.iou:iou:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\iou\pom.xml.
+2022-07-13 23:11:00,709 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:11:00,713 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:11:00,715 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:11:00,717 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:11:02,132 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:11:02,135 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:11:02,136 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:11:02,137 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:11:05,807 [Worker-20: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm.iou:iou:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\iou\pom.xml.
+2022-07-13 23:11:05,905 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:11:05,907 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:11:05,908 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:11:05,910 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:14:39,540 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:14:39,543 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:14:39,545 [Worker-20: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:14:39,548 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:14:40,573 [Worker-23: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:14:40,576 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:14:40,577 [Worker-23: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:14:40,580 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:57:01,922 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:57:01,923 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:57:01,924 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:57:01,925 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:57:04,727 [Worker-19: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm.iou:iou:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\iou\pom.xml.
+2022-07-13 23:57:04,886 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:57:04,890 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-13 23:57:04,892 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-13 23:57:04,893 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-14 07:28:45,165 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-15 12:25:00,271 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-07-15 23:09:05,833 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-07-16 01:13:06,735 [Worker-17: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\pom.xml
+2022-07-16 01:13:10,985 [Worker-17: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm:project-one:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\pom.xml.
+2022-07-16 01:13:13,422 [Worker-17: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /project-one/src/main/java
+2022-07-16 01:13:13,423 [Worker-17: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /project-one/src/test/java
+2022-07-16 01:13:14,276 [Worker-17: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 7 sec
+2022-07-16 01:13:15,900 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-16 01:13:15,904 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-16 01:13:15,906 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-07-16 01:13:15,908 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-16 01:13:16,509 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:13:16,510 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:13:16,513 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:13:16,513 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:19:24,051 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:19:24,051 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:19:24,053 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:19:24,053 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:19:40,002 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:19:40,002 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:19:40,003 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:19:40,003 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:25:31,130 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:25:31,131 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:25:31,133 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:25:31,134 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:25:42,057 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:25:42,058 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:25:42,059 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:25:42,059 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:28:09,838 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:28:09,838 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:28:09,839 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:28:09,839 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:35:16,802 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:35:16,802 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:35:16,803 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:35:16,804 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:38:05,681 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:38:05,682 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:38:05,687 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:38:05,687 [Worker-32: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:38:43,357 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:38:43,357 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:38:43,358 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:38:43,359 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:44:12,462 [Worker-52: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm:project-one:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\pom.xml.
+2022-07-16 01:44:13,127 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:44:13,128 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:44:13,130 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:44:13,130 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:44:13,133 [Worker-52: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of project-one
+2022-07-16 01:44:13,134 [Worker-52: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for project-one
+2022-07-16 01:44:13,140 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:44:14,206 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:44:14,206 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:44:14,207 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:44:14,208 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:47:14,568 [Worker-54: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.skillstorm:project-one:0.0.1-SNAPSHOT @ C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\pom.xml.
+2022-07-16 01:47:15,105 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:47:15,106 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:47:15,108 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:47:15,109 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:47:15,109 [Worker-54: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of project-one
+2022-07-16 01:47:15,109 [Worker-54: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for project-one
+2022-07-16 01:47:15,149 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:47:58,427 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:47:58,427 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\main\resources
+2022-07-16 01:47:58,428 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-16 01:47:58,428 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\I-O-U\project-one\src\test\resources
+2022-07-16 01:50:02,794 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
