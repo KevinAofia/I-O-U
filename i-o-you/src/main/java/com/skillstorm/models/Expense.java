@@ -17,23 +17,12 @@ public class Expense {
 		super();
 	}
 
-	public Expense(int id, String firstName, String lastName, String date, String reason) {
+	public Expense(String firstName, String lastName, String date, String reason) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.date = date;
 		this.reason = reason;
-	}
-
-	public Expense(int id, String firstName, String lastName, String date, String reason, ReimbursementStatus status) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.date = date;
-		this.reason = reason;
-		this.status = status;
 	}
 
 	// Getters and Setters

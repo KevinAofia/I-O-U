@@ -24,3 +24,5 @@ Steps for JDBC:
 	4. Use the connection object to execute the SQL statement
 	5. Parse the returned ResultSet object for the data we want
 	6. Close the connection
+
+Implement JDBC CRUD methods using DAO's and models.
