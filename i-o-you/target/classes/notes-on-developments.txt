@@ -1,0 +1,26 @@
+models: contains the models of the MySQL DB
+	Expense
+	ReimbursementStatus
+	
+daos: contains the DAOs & JDBC connection to the DB
+	ExpenseDAO
+	
+	
+servlets: contains the servlets & front controller
+	FrontController
+
+	
+Project Refreshers:
+
+Check Dependencies:
+	JAVAX for HTTP handling using servlets
+	JDBC DRIVER for communicating to MySQL DB
+	JACKSON for JSON processing libraries & ObjectMapper
+
+Steps for JDBC:
+	1. Load the JDBC Driver into memory
+	2. Establish a connection JDBC Driver Object
+	3. Create an SQL statement
+	4. Use the connection object to execute the SQL statement
+	5. Parse the returned ResultSet object for the data we want
+	6. Close the connection
