@@ -7,20 +7,31 @@ public class Expense {
 	private int id;
 	private String firstName;
 	private String lastName;
+	private String date;
 	private String reason;
 	private ReimbursementStatus status;
-
+	
 	// Constructors
 
 	public Expense() {
 		super();
 	}
 
-	public Expense(int id, String firstName, String lastName, String reason, ReimbursementStatus status) {
+	public Expense(int id, String firstName, String lastName, String date, String reason) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.date = date;
+		this.reason = reason;
+	}
+
+	public Expense(int id, String firstName, String lastName, String date, String reason, ReimbursementStatus status) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.date = date;
 		this.reason = reason;
 		this.status = status;
 	}
@@ -51,6 +62,14 @@ public class Expense {
 		this.lastName = lastName;
 	}
 
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	public String getReason() {
 		return reason;
 	}
@@ -71,8 +90,8 @@ public class Expense {
 
 	@Override
 	public String toString() {
-		return "Expense [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", reason=" + reason
-				+ ", status=" + status + "]";
+		return "Expense [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", date=" + date
+				+ ", reason=" + reason + ", status=" + status + "]";
 	}
 
 }

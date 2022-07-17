@@ -13,6 +13,11 @@ public class ReimbursementStatus {
 		super();
 	}
 
+	public ReimbursementStatus(String status) {
+		super();
+		this.status = status;
+	}
+
 	public ReimbursementStatus(int id, String status) {
 		super();
 		this.id = id;
