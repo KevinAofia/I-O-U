@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.skillstorm.models.ReimbursementStatus;
 
@@ -81,9 +81,9 @@ public class ReimbursementStatusDAO {
 		}
 	}
 
-	public Set<ReimbursementStatus> findByStatusLike(String like) throws SQLException {
+	public List<ReimbursementStatus> findByStatusLike(String like) throws SQLException {
 		// set of statuses returned at the end
-		Set<ReimbursementStatus> reimbursementStatuses = new HashSet<ReimbursementStatus>();
+		List<ReimbursementStatus> reimbursementStatuses = new ArrayList<ReimbursementStatus>();
 
 		String sql = "SELECT ReimbursementStatusId, Status FROM ReimbursementStatus WHERE Status LIKE ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -99,9 +99,9 @@ public class ReimbursementStatusDAO {
 		return reimbursementStatuses;
 	}
 
-	public Set<ReimbursementStatus> findAll() throws SQLException {
+	public List<ReimbursementStatus> findAll() throws SQLException {
 		// set of statuses returned at the end
-		Set<ReimbursementStatus> reimbursementStatuses = new HashSet<ReimbursementStatus>();
+		List<ReimbursementStatus> reimbursementStatuses = new ArrayList<ReimbursementStatus>();
 		String sql = "SELECT ReimbursementStatusId, Status FROM ReimbursementStatus;";
 		Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery(sql);
@@ -146,10 +146,6 @@ public class ReimbursementStatusDAO {
 		catch (SQLIntegrityConstraintViolationException e) {
 			return false;
 		}
-	}
-	
-	public void closeConnection() throws SQLException {
-		this.connection.close();
 	}
 
 //	public static void main(String[] args) throws SQLException {
