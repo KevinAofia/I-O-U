@@ -1,5 +1,7 @@
 package com.skillstorm.models;
 
+import java.sql.SQLException;
+
 public class Expense {
 
 	// Attributes
@@ -13,7 +15,7 @@ public class Expense {
 	
 	// Constructors
 
-	public Expense() {
+	public Expense() throws SQLException{
 		super();
 	}
 

@@ -147,6 +147,10 @@ public class ReimbursementStatusDAO {
 			return false;
 		}
 	}
+	
+	public void closeConnection() throws SQLException {
+		this.connection.close();
+	}
 
 //	public static void main(String[] args) throws SQLException {
 //		// FOR FUN TESTING AREA

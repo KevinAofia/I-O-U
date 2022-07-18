@@ -2,8 +2,9 @@ models: contains the models of the MySQL DB
 	Expense
 	ReimbursementStatus
 	
-daos: contains the DAOs & JDBC connection to the DB
+daos: contains the DAOs & JDBC connection for communicating to the DB
 	ExpenseDAO
+	ReimbursementStatusDAO
 	
 	
 servlets: contains the servlets & front controller

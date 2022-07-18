@@ -7,7 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.skillstorm.models.Expense;
@@ -16,16 +18,20 @@ public class ExpenseDAO {
 
 	private Connection connection;
 
-	public ExpenseDAO() throws SQLException {
+	public ExpenseDAO() {
 		String url = "jdbc:mysql://localhost:3306/ioyou";
 		String username = "root";
 		String password = "root";
-		this.connection = DriverManager.getConnection(url, username, password);
-	}
-
-	// PUT IN CONFIG FILE LATER
-	public Connection getConnection() {
-		return connection;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.err.println("\n\nExpenseDAO: " + e + "\n\n");
+		}
+		try {
+			this.connection = DriverManager.getConnection(url, username, password);
+		} catch (SQLException e) {
+			System.err.println("\n\nExpenseDAO: " + e + "\n\n");
+		}
 	}
 
 	// CRUD
@@ -53,10 +59,12 @@ public class ExpenseDAO {
 		resultSet.next();
 		int generatedId = resultSet.getInt(1);
 		expense.setId(generatedId);
+
 		return expense;
 	}
 
 	public Expense findById(int id) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		String sql = "SELECT ExpenseId,FirstName,LastName,Date,Reason,ReimbursementStatusId FROM Expense WHERE ExpenseId = ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setInt(1, id);
@@ -79,9 +87,10 @@ public class ExpenseDAO {
 		}
 	}
 
-	public Set<Expense> findByFirstNameLike(String like) throws SQLException {
+	public List<Expense> findByFirstNameLike(String like) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
-		Set<Expense> expenses = new HashSet<Expense>();
+		List<Expense> expenses = new ArrayList<Expense>();
 
 		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.FirstName LIKE ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -107,9 +116,10 @@ public class ExpenseDAO {
 
 	}
 
-	public Set<Expense> findByLastNameLike(String like) throws SQLException {
+	public List<Expense> findByLastNameLike(String like) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
-		Set<Expense> expenses = new HashSet<Expense>();
+		List<Expense> expenses = new ArrayList<Expense>();
 
 		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.LastName LIKE ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -135,9 +145,10 @@ public class ExpenseDAO {
 
 	}
 
-	public Set<Expense> findByReasonLike(String like) throws SQLException {
+	public List<Expense> findByReasonLike(String like) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
-		Set<Expense> expenses = new HashSet<Expense>();
+		List<Expense> expenses = new ArrayList<Expense>();
 
 		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.Reason LIKE ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -162,9 +173,10 @@ public class ExpenseDAO {
 		return expenses;
 	}
 
-	public Set<Expense> findByStatusId(int id) throws SQLException {
+	public List<Expense> findByStatusId(int id) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
-		Set<Expense> expenses = new HashSet<Expense>();
+		List<Expense> expenses = new ArrayList<Expense>();
 
 		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.ReimbursementStatusId =  ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -189,9 +201,10 @@ public class ExpenseDAO {
 		return expenses;
 	}
 
-	public Set<Expense> findByStatusLike(String like) throws SQLException {
+	public List<Expense> findByStatusLike(String like) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
-		Set<Expense> expenses = new HashSet<Expense>();
+		List<Expense> expenses = new ArrayList<Expense>();
 
 		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE ReimbursementStatus.Status LIKE ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
@@ -216,9 +229,10 @@ public class ExpenseDAO {
 		return expenses;
 	}
 
-	public Set<Expense> findAll() throws SQLException {
+	public List<Expense> findAll() throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
-		Set<Expense> expenses = new HashSet<Expense>();
+		List<Expense> expenses = new ArrayList<Expense>();
 
 		String sql = "SELECT ExpenseId,FirstName,LastName,Date,Reason,ReimbursementStatusId FROM Expense;";
 
@@ -243,6 +257,7 @@ public class ExpenseDAO {
 	}
 
 	public boolean update(Expense expense) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		String sql = "UPDATE Expense SET FirstName =?, LastName = ?, Date = ?, Reason = ?, ReimbursementStatusId = ? WHERE ExpenseId = ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setString(1, expense.getFirstName());
@@ -255,6 +270,7 @@ public class ExpenseDAO {
 	}
 
 	public boolean delete(Expense expense) throws SQLException {
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// ADJUST FOR NULLPOINTER EXCEPTION LATER
 
 		String sql = "DELETE FROM Expense WHERE ExpenseId = ?";
@@ -270,13 +286,13 @@ public class ExpenseDAO {
 		}
 
 	}
-	
-//	public static void main(String[] args) throws SQLException {
+
+	public static void main(String[] args) throws SQLException {
 //		// FOR FUN TEST AREA
-//		ExpenseDAO expenseDAO = new ExpenseDAO();
+		ExpenseDAO expenseDAO = new ExpenseDAO();
 //		System.out.println(!expenseDAO.getConnection().isClosed());
-//		Expense expense = new Expense(25, "new", "person", "07-01-2022", "just");
-//		System.out.println(expenseDAO.create(expense));
+		Expense expense = new Expense("new2", "2person", "07-01-2022", "just a test 2");
+		System.out.println(expenseDAO.create(expense));
 //		ReimbursementStatusDAO reimbursementStatusDAO = new ReimbursementStatusDAO();
 //		System.out.println(!reimbursementStatusDAO.getConnection().isClosed());
 //		Expense newExpense = expenseDAO.create(new Expense("Koo", "Ala", "tomorrow", "please approve"));
@@ -295,7 +311,6 @@ public class ExpenseDAO {
 //		newExpense.setStatus(new ReimbursementStatusDAO().findById(3));
 //		testExpense.setFirstName("XXXX");
 //		testExpense.setLastName("YYYY");
-//		testExpense.setStatus(new ReimbursementStatusDAO().findById(5));
 //		System.out.println(expenseDAO.update(testExpense));
 //		System.out.println(expenseDAO.update(newExpense));
 //		System.out.println("-----------------------------");
@@ -304,16 +319,6 @@ public class ExpenseDAO {
 //		System.out.println(newExpense);
 //		System.out.println(expenseDAO.delete(testExpense));
 //		System.out.println(expenseDAO.delete(newExpense));
-//		System.out.println(reimbursementStatusDAO.delete(testExpense));
-//		System.out.println(reimbursementStatusDAO.findAll());
-//		System.out.println(reimbursementStatusDAO.findDefault());
-//		System.out.println(reimbursementStatusDAO.create(new ReimbursementStatus("Some New status")));
-//		ReimbursementStatus testUpdateDelete = reimbursementStatusDAO.findById(5);
-//		testUpdateDelete.setStatus("Change this status");
-//		System.out.println(reimbursementStatusDAO.update(testUpdateDelete));
-//		System.out.println(reimbursementStatusDAO.delete(testUpdateDelete));
-//		System.out.println(reimbursementStatusDAO.findByStatusLike("%d"));
-//	}
-	
+	}
 
 }
