@@ -1,3 +1,6 @@
+----------------------------------------------------------------------------
+BACKEND
+----------------------------------------------------------------------------
 models: contains the models of the MySQL DB
 	Expense
 	ReimbursementStatus
@@ -40,5 +43,37 @@ and JSON to Java to achieve a working API over HTTP
 
 Jackson libraries will provide a JSON processing library we can use
 ObjectMapper is the primarily used object to achieve this
+
+----------------------------------------------------------------------------
+FRONTEND
+----------------------------------------------------------------------------
+Connect to react
+	node.js needs to be installed before you can develop react application
+	In working directory run:
+	create react application with npx create-react-app .  
+	
+	Then run:
+	run npm start
+	
+	If you are cloning and node modules is not present after clone run:
+	npm install
+
+	Install library that is capable of fetching data from an API
+	
+	This project is using axios(an AJAX library):
+	axios - a promise-based HTTP Client for node.js and the browser which
+	eases the process of sending asynchronous HTTP requests to REST endpoints
+	and performing CRUD operations
+
+	To install, stop react ctrl-c, and run in working directory:
+	npm i axios
+	
+Entry point for any react app is index.js
+
+Define our own App.js or App.jsx
+	must export either using 'default export [AppName]' at bottom or 
+	by using named exports 'export const [AppName]' in declaration
+	1 default exportper file
+	
 
 

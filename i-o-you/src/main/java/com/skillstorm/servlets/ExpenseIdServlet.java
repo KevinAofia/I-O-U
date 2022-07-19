@@ -16,7 +16,7 @@ import com.skillstorm.daos.ExpenseDAO;
 import com.skillstorm.daos.ReimbursementStatusDAO;
 import com.skillstorm.models.Expense;
 
-@WebServlet(urlPatterns = "/expense/*")
+@WebServlet(urlPatterns = "/expenses/*")
 public class ExpenseIdServlet extends HttpServlet {
 
 	private ExpenseDAO expenseDAO = new ExpenseDAO();
