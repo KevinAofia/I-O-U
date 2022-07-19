@@ -50,16 +50,15 @@ public class ExpenseIdServlet extends HttpServlet {
 		try {
 			// strict update using FK constraint and mapped DB values
 			expense.setStatus(new ReimbursementStatusDAO().findById(expense.getStatus().getId()));
+
+			expenseDAO.update(expense);
+
+			resp.getWriter().print(mapper.writeValueAsString(expenseDAO.findById(id)));
+			resp.setContentType("application/json");
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		try {
-			expenseDAO.update(expense);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		resp.setContentType("application/json");
-		resp.getWriter().print(mapper.writeValueAsString(expense));
+
 	}
 
 	// Deletes an expense - MOVE TO /expense servlet
@@ -69,7 +68,7 @@ public class ExpenseIdServlet extends HttpServlet {
 
 		try {
 			expenseDAO.delete(expenseDAO.findById(id));
-			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseDAO.findById(id)));
+			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseDAO.findAll()));
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

@@ -10,20 +10,22 @@ public class Expense {
 	private String firstName;
 	private String lastName;
 	private String date;
+	private String amount;
 	private String reason;
 	private ReimbursementStatus status;
-	
+
 	// Constructors
 
-	public Expense() throws SQLException{
+	public Expense() throws SQLException {
 		super();
 	}
 
-	public Expense(String firstName, String lastName, String date, String reason) {
+	public Expense(String firstName, String lastName, String date, String amount, String reason) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.date = date;
+		this.amount = amount;
 		this.reason = reason;
 	}
 
@@ -61,6 +63,14 @@ public class Expense {
 		this.date = date;
 	}
 
+	public String getAmount() {
+		return amount;
+	}
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
 	public String getReason() {
 		return reason;
 	}
@@ -82,7 +92,7 @@ public class Expense {
 	@Override
 	public String toString() {
 		return "Expense [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", date=" + date
-				+ ", reason=" + reason + ", status=" + status + "]";
+				+ ", amount=" + amount + ", reason=" + reason + ", status=" + status + "]";
 	}
 
 }

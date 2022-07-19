@@ -35,20 +35,21 @@ public class ExpenseDAO {
 	// CRUD
 
 	public Expense create(Expense expense) throws SQLException {
-		String sql = "INSERT INTO Expense(FirstName, LastName, Date, Reason, ReimbursementStatusId) values (?,?,?,?,?)";
+		String sql = "INSERT INTO Expense(FirstName, LastName, Date, Amount, Reason, ReimbursementStatusId) values (?,?,?,?,?,?)";
 		// flag: return generated keys
 		PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 		statement.setString(1, expense.getFirstName());
 		statement.setString(2, expense.getLastName());
 		statement.setString(3, expense.getDate());
-		statement.setString(4, expense.getReason());
+		statement.setString(4, expense.getAmount());
+		statement.setString(5, expense.getReason());
 
 		// Expense statuses default to the ReimbursementStatusDAO default
 		expense.setStatus(new ReimbursementStatusDAO().findDefault());
 
 		// FK references ReimbursementStatus - grab the id from the correct table
-		statement.setInt(5, expense.getStatus().getId());
+		statement.setInt(6, expense.getStatus().getId());
 
 		statement.executeUpdate();
 
@@ -63,16 +64,15 @@ public class ExpenseDAO {
 
 	public Expense findById(int id) throws SQLException {
 		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		String sql = "SELECT ExpenseId,FirstName,LastName,Date,Reason,ReimbursementStatusId FROM Expense WHERE ExpenseId = ?;";
+		String sql = "SELECT ExpenseId,FirstName,LastName,Date,Amount,Reason,ReimbursementStatusId FROM Expense WHERE ExpenseId = ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setInt(1, id);
 		ResultSet resultSet = statement.executeQuery();
 		// Ensure resultSet returned a value or return null
 		if (resultSet.next()) {
-
 			// Create Java Object and Return with extracted DB values
 			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
+					resultSet.getString("Date"), resultSet.getString("Amount"), resultSet.getString("Reason"));
 
 			expense.setId(resultSet.getInt("ExpenseId"));
 
@@ -85,154 +85,164 @@ public class ExpenseDAO {
 		}
 	}
 
-	public List<Expense> findByFirstNameLike(String like) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		// set of statuses returned at the end
-		List<Expense> expenses = new ArrayList<Expense>();
-
-		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.FirstName LIKE ?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, like);
-		ResultSet resultSet = statement.executeQuery();
-
-		// Create Java Objects from MySQL DB
-		while (resultSet.next()) {
-
-			// Create Java Object and Return with extracted DB values
-			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
-
-			expense.setId(resultSet.getInt("ExpenseId"));
-
-			// Expense status comes from ReimbursementStatusDAO
-			expense.setStatus(new ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
-
-			// Create Java Object with extracted DB values and add to set
-			expenses.add(expense);
-		}
-		return expenses;
-
-	}
-
-	public List<Expense> findByLastNameLike(String like) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		// set of statuses returned at the end
-		List<Expense> expenses = new ArrayList<Expense>();
-
-		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.LastName LIKE ?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, like);
-		ResultSet resultSet = statement.executeQuery();
-
-		// Create Java Objects from MySQL DB
-		while (resultSet.next()) {
-
-			// Create Java Object and Return with extracted DB values
-			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
-
-			expense.setId(resultSet.getInt("ExpenseId"));
-
-			// Expense status comes from ReimbursementStatusDAO
-			expense.setStatus(new ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
-
-			// Create Java Object with extracted DB values and add to set
-			expenses.add(expense);
-		}
-		return expenses;
-
-	}
-
-	public List<Expense> findByReasonLike(String like) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		// set of statuses returned at the end
-		List<Expense> expenses = new ArrayList<Expense>();
-
-		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.Reason LIKE ?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, like);
-		ResultSet resultSet = statement.executeQuery();
-
-		// Create Java Objects from MySQL DB
-		while (resultSet.next()) {
-
-			// Create Java Object and Return with extracted DB values
-			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
-
-			expense.setId(resultSet.getInt("ExpenseId"));
-
-			// Expense status comes from ReimbursementStatusDAO
-			expense.setStatus(new ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
-
-			// Create Java Object with extracted DB values and add to set
-			expenses.add(expense);
-		}
-		return expenses;
-	}
-
-	public List<Expense> findByStatusId(int id) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		// set of statuses returned at the end
-		List<Expense> expenses = new ArrayList<Expense>();
-
-		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE Expense.ReimbursementStatusId =  ?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1, id);
-		ResultSet resultSet = statement.executeQuery();
-
-		// Create Java Objects from MySQL DB
-		while (resultSet.next()) {
-
-			// Create Java Object and Return with extracted DB values
-			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
-
-			expense.setId(resultSet.getInt("ExpenseId"));
-
-			// Expense status comes from ReimbursementStatusDAO
-			expense.setStatus(new ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
-
-			// Create Java Object with extracted DB values and add to set
-			expenses.add(expense);
-		}
-		return expenses;
-	}
-
-	public List<Expense> findByStatusLike(String like) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		// set of statuses returned at the end
-		List<Expense> expenses = new ArrayList<Expense>();
-
-		String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName, Expense.Date, Expense.Reason,Expense.ReimbursementStatusId, ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId WHERE ReimbursementStatus.Status LIKE ?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, like);
-		ResultSet resultSet = statement.executeQuery();
-
-		// Create Java Objects from MySQL DB
-		while (resultSet.next()) {
-
-			// Create Java Object and Return with extracted DB values
-			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
-
-			expense.setId(resultSet.getInt("ExpenseId"));
-
-			// Expense status comes from ReimbursementStatusDAO
-			expense.setStatus(new ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
-
-			// Create Java Object with extracted DB values and add to set
-			expenses.add(expense);
-		}
-		return expenses;
-	}
+	/**
+	 * 
+	 * public List<Expense> findByFirstNameLike(String like) throws SQLException {
+	 * Connection connection =
+	 * DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root",
+	 * "root"); // set of statuses returned at the end List<Expense> expenses = new
+	 * ArrayList<Expense>();
+	 * 
+	 * String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName,
+	 * Expense.Date, Expense.Reason,Expense.ReimbursementStatusId,
+	 * ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON
+	 * Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId
+	 * WHERE Expense.FirstName LIKE ?;"; PreparedStatement statement =
+	 * connection.prepareStatement(sql); statement.setString(1, like); ResultSet
+	 * resultSet = statement.executeQuery();
+	 * 
+	 * // Create Java Objects from MySQL DB while (resultSet.next()) {
+	 * 
+	 * // Create Java Object and Return with extracted DB values Expense expense =
+	 * new Expense(resultSet.getString("FirstName"),
+	 * resultSet.getString("LastName"), resultSet.getString("Date"),
+	 * resultSet.getString("Reason"));
+	 * 
+	 * expense.setId(resultSet.getInt("ExpenseId"));
+	 * 
+	 * // Expense status comes from ReimbursementStatusDAO expense.setStatus(new
+	 * ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
+	 * 
+	 * // Create Java Object with extracted DB values and add to set
+	 * expenses.add(expense); } return expenses;
+	 * 
+	 * }
+	 * 
+	 * public List<Expense> findByLastNameLike(String like) throws SQLException {
+	 * Connection connection =
+	 * DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root",
+	 * "root"); // set of statuses returned at the end List<Expense> expenses = new
+	 * ArrayList<Expense>();
+	 * 
+	 * String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName,
+	 * Expense.Date, Expense.Reason,Expense.ReimbursementStatusId,
+	 * ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON
+	 * Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId
+	 * WHERE Expense.LastName LIKE ?;"; PreparedStatement statement =
+	 * connection.prepareStatement(sql); statement.setString(1, like); ResultSet
+	 * resultSet = statement.executeQuery();
+	 * 
+	 * // Create Java Objects from MySQL DB while (resultSet.next()) {
+	 * 
+	 * // Create Java Object and Return with extracted DB values Expense expense =
+	 * new Expense(resultSet.getString("FirstName"),
+	 * resultSet.getString("LastName"), resultSet.getString("Date"),
+	 * resultSet.getString("Reason"));
+	 * 
+	 * expense.setId(resultSet.getInt("ExpenseId"));
+	 * 
+	 * // Expense status comes from ReimbursementStatusDAO expense.setStatus(new
+	 * ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
+	 * 
+	 * // Create Java Object with extracted DB values and add to set
+	 * expenses.add(expense); } return expenses;
+	 * 
+	 * }
+	 * 
+	 * public List<Expense> findByReasonLike(String like) throws SQLException {
+	 * Connection connection =
+	 * DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root",
+	 * "root"); // set of statuses returned at the end List<Expense> expenses = new
+	 * ArrayList<Expense>();
+	 * 
+	 * String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName,
+	 * Expense.Date, Expense.Reason,Expense.ReimbursementStatusId,
+	 * ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON
+	 * Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId
+	 * WHERE Expense.Reason LIKE ?;"; PreparedStatement statement =
+	 * connection.prepareStatement(sql); statement.setString(1, like); ResultSet
+	 * resultSet = statement.executeQuery();
+	 * 
+	 * // Create Java Objects from MySQL DB while (resultSet.next()) {
+	 * 
+	 * // Create Java Object and Return with extracted DB values Expense expense =
+	 * new Expense(resultSet.getString("FirstName"),
+	 * resultSet.getString("LastName"), resultSet.getString("Date"),
+	 * resultSet.getString("Reason"));
+	 * 
+	 * expense.setId(resultSet.getInt("ExpenseId"));
+	 * 
+	 * // Expense status comes from ReimbursementStatusDAO expense.setStatus(new
+	 * ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
+	 * 
+	 * // Create Java Object with extracted DB values and add to set
+	 * expenses.add(expense); } return expenses; }
+	 * 
+	 * public List<Expense> findByStatusId(int id) throws SQLException { Connection
+	 * connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou",
+	 * "root", "root"); // set of statuses returned at the end List<Expense>
+	 * expenses = new ArrayList<Expense>();
+	 * 
+	 * String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName,
+	 * Expense.Date, Expense.Reason,Expense.ReimbursementStatusId,
+	 * ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON
+	 * Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId
+	 * WHERE Expense.ReimbursementStatusId = ?;"; PreparedStatement statement =
+	 * connection.prepareStatement(sql); statement.setInt(1, id); ResultSet
+	 * resultSet = statement.executeQuery();
+	 * 
+	 * // Create Java Objects from MySQL DB while (resultSet.next()) {
+	 * 
+	 * // Create Java Object and Return with extracted DB values Expense expense =
+	 * new Expense(resultSet.getString("FirstName"),
+	 * resultSet.getString("LastName"), resultSet.getString("Date"),
+	 * resultSet.getString("Reason"));
+	 * 
+	 * expense.setId(resultSet.getInt("ExpenseId"));
+	 * 
+	 * // Expense status comes from ReimbursementStatusDAO expense.setStatus(new
+	 * ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
+	 * 
+	 * // Create Java Object with extracted DB values and add to set
+	 * expenses.add(expense); } return expenses; }
+	 * 
+	 * public List<Expense> findByStatusLike(String like) throws SQLException {
+	 * Connection connection =
+	 * DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root",
+	 * "root"); // set of statuses returned at the end List<Expense> expenses = new
+	 * ArrayList<Expense>();
+	 * 
+	 * String sql = "SELECT Expense.Expenseid, Expense.FirstName,Expense.LastName,
+	 * Expense.Date, Expense.Reason,Expense.ReimbursementStatusId,
+	 * ReimbursementStatus.Status FROM Expense INNER JOIN ReimbursementStatus ON
+	 * Expense.ReimbursementStatusId = ReimbursementStatus.ReimbursementStatusId
+	 * WHERE ReimbursementStatus.Status LIKE ?;"; PreparedStatement statement =
+	 * connection.prepareStatement(sql); statement.setString(1, like); ResultSet
+	 * resultSet = statement.executeQuery();
+	 * 
+	 * // Create Java Objects from MySQL DB while (resultSet.next()) {
+	 * 
+	 * // Create Java Object and Return with extracted DB values Expense expense =
+	 * new Expense(resultSet.getString("FirstName"),
+	 * resultSet.getString("LastName"), resultSet.getString("Date"),
+	 * resultSet.getString("Reason"));
+	 * 
+	 * expense.setId(resultSet.getInt("ExpenseId"));
+	 * 
+	 * // Expense status comes from ReimbursementStatusDAO expense.setStatus(new
+	 * ReimbursementStatusDAO().findById(resultSet.getInt("ReimbursementStatusId")));
+	 * 
+	 * // Create Java Object with extracted DB values and add to set
+	 * expenses.add(expense); } return expenses; }
+	 * 
+	 * 
+	 */
 
 	public List<Expense> findAll() throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
 		// set of statuses returned at the end
 		List<Expense> expenses = new ArrayList<Expense>();
 
-		String sql = "SELECT ExpenseId,FirstName,LastName,Date,Reason,ReimbursementStatusId FROM Expense;";
+		String sql = "SELECT ExpenseId,FirstName,LastName,Date,Amount,Reason,ReimbursementStatusId FROM Expense;";
 
 		Statement statement = connection.createStatement();
 		ResultSet resultSet = statement.executeQuery(sql);
@@ -242,7 +252,7 @@ public class ExpenseDAO {
 
 			// Create Java Object and Return with extracted DB values
 			Expense expense = new Expense(resultSet.getString("FirstName"), resultSet.getString("LastName"),
-					resultSet.getString("Date"), resultSet.getString("Reason"));
+					resultSet.getString("Date"), resultSet.getString("Amount"), resultSet.getString("Reason"));
 
 			expense.setId(resultSet.getInt("ExpenseId"));
 
@@ -255,22 +265,19 @@ public class ExpenseDAO {
 	}
 
 	public boolean update(Expense expense) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		String sql = "UPDATE Expense SET FirstName =?, LastName = ?, Date = ?, Reason = ?, ReimbursementStatusId = ? WHERE ExpenseId = ?;";
+		String sql = "UPDATE Expense SET FirstName = ?, LastName = ?, Date = ?, Amount = ?, Reason = ?, ReimbursementStatusId = ? WHERE ExpenseId = ?;";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setString(1, expense.getFirstName());
 		statement.setString(2, expense.getLastName());
 		statement.setString(3, expense.getDate());
-		statement.setString(4, expense.getReason());
-		statement.setInt(5, expense.getStatus().getId());
-		statement.setInt(6, expense.getId());
+		statement.setString(4, expense.getAmount());
+		statement.setString(5, expense.getReason());
+		statement.setInt(6, expense.getStatus().getId());
+		statement.setInt(7, expense.getId());
 		return statement.executeUpdate() == 1;
 	}
 
 	public boolean delete(Expense expense) throws SQLException {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ioyou", "root", "root");
-		// ADJUST FOR NULLPOINTER EXCEPTION LATER
-
 		String sql = "DELETE FROM Expense WHERE ExpenseId = ?";
 		PreparedStatement statement = connection.prepareStatement(sql);
 		statement.setInt(1, expense.getId());
@@ -278,18 +285,17 @@ public class ExpenseDAO {
 		try {
 			return statement.executeUpdate() == 1;
 		}
-		// We'll handle any FK constraint exception here
+		// Handle any FK constraint exception here
 		catch (SQLIntegrityConstraintViolationException e) {
 			return false;
 		}
-
 	}
 
 //	public static void main(String[] args) throws SQLException {
 //		// FOR FUN TEST AREA
 //		ExpenseDAO expenseDAO = new ExpenseDAO();
 //		System.out.println(!expenseDAO.getConnection().isClosed());
-//		Expense expense = new Expense("new2", "2person", "07-01-2022", "just a test 2");
+//		Expense expense = new Expense("new2", "2person", "07-01-2022","$.01", "just a test 2");
 //		System.out.println(expenseDAO.create(expense));
 //		ReimbursementStatusDAO reimbursementStatusDAO = new ReimbursementStatusDAO();
 //		System.out.println(!reimbursementStatusDAO.getConnection().isClosed());

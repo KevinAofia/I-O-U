@@ -70,7 +70,8 @@ public class ReimbursementStatusDAO {
 			return null;
 		}
 	}
-
+	
+	/**
 	public List<ReimbursementStatus> findByStatusLike(String like) throws SQLException {
 		// set of statuses returned at the end
 		List<ReimbursementStatus> reimbursementStatuses = new ArrayList<ReimbursementStatus>();
@@ -88,7 +89,8 @@ public class ReimbursementStatusDAO {
 		}
 		return reimbursementStatuses;
 	}
-
+	*/
+	
 	public List<ReimbursementStatus> findAll() throws SQLException {
 		// set of statuses returned at the end
 		List<ReimbursementStatus> reimbursementStatuses = new ArrayList<ReimbursementStatus>();
