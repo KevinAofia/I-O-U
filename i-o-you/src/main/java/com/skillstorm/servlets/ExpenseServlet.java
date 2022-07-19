@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.skillstorm.daos.ExpenseDAO;
 import com.skillstorm.models.Expense;
 
-@WebServlet(urlPatterns = "/*")
+@WebServlet(urlPatterns = "/expense")
 public class ExpenseServlet extends HttpServlet {
 
 	private ExpenseDAO expenseDAO = new ExpenseDAO();
@@ -22,12 +22,6 @@ public class ExpenseServlet extends HttpServlet {
 	// Return all expenses
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		System.out.println(req.getPathInfo());
-		System.out.println(req.getServletContext());
-		System.out.println(req.getServletPath());
-		System.out.println(req.getContextPath());
-		System.out.println(req.getRequestURI());
 
 		try {
 			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseDAO.findAll()));
@@ -42,28 +36,16 @@ public class ExpenseServlet extends HttpServlet {
 
 	}
 
-	// Create an expense
+	// Creates an expense
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			expenseDAO.create(new ObjectMapper().readValue(req.getInputStream(), Expense.class));
+			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseDAO.findAll()));
+			resp.setContentType("application/json");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-
-	// Update an expense
-	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//			System.out.println("doPut works!");
-
-	}
-
-	// Delete an expense
-	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//			System.out.println("doDelete works!");
-
 	}
 
 }

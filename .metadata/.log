@@ -3685,3 +3685,6 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-07-18 13:40:42.954
 !MESSAGE Several ports (8005, 8080) required by Tomcat v8.5 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2022-07-18 21:28:15.551
+!MESSAGE Port 8005 required by Tomcat v8.5 Server at localhost is already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).

@@ -285,12 +285,12 @@ public class ExpenseDAO {
 
 	}
 
-	public static void main(String[] args) throws SQLException {
+//	public static void main(String[] args) throws SQLException {
 //		// FOR FUN TEST AREA
-		ExpenseDAO expenseDAO = new ExpenseDAO();
+//		ExpenseDAO expenseDAO = new ExpenseDAO();
 //		System.out.println(!expenseDAO.getConnection().isClosed());
-		Expense expense = new Expense("new2", "2person", "07-01-2022", "just a test 2");
-		System.out.println(expenseDAO.create(expense));
+//		Expense expense = new Expense("new2", "2person", "07-01-2022", "just a test 2");
+//		System.out.println(expenseDAO.create(expense));
 //		ReimbursementStatusDAO reimbursementStatusDAO = new ReimbursementStatusDAO();
 //		System.out.println(!reimbursementStatusDAO.getConnection().isClosed());
 //		Expense newExpense = expenseDAO.create(new Expense("Koo", "Ala", "tomorrow", "please approve"));
@@ -317,6 +317,6 @@ public class ExpenseDAO {
 //		System.out.println(newExpense);
 //		System.out.println(expenseDAO.delete(testExpense));
 //		System.out.println(expenseDAO.delete(newExpense));
-	}
+//	}
 
 }

@@ -23,16 +23,6 @@ public class ReimbursementStatusDAO {
 		this.connection = DriverManager.getConnection(url, username, password);
 	}
 
-	// PUT IN CONFIG FILE LATER
-	public Connection getConnection() {
-		return connection;
-	}
-
-	public ReimbursementStatusDAO(Connection connection) {
-		super();
-		this.connection = connection;
-	}
-
 	// CRUD
 	public ReimbursementStatus create(ReimbursementStatus reimbursementStatus) throws SQLException {
 		String sql = "INSERT INTO ReimbursementStatus(Status) values (?);";
