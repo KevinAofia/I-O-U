@@ -75,7 +75,7 @@ Entry point for any react app is index.js
 Define our own App.js or App.jsx
 	must export either using 'default export [AppName]' at bottom or 
 	by using named exports 'export const [AppName]' in declaration
-	1 default exportper file
+	1 default export per file
 	
 
 

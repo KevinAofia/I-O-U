@@ -1,11 +1,12 @@
-import { Expense } from "./components/Expense";
+import { Navbar } from "./components/Navbar"
+import { ExpenseList } from "./components/Expense";
 
 export const App = () => {
     return (
         <>
-            <h1>App in App.jsx Connect ME</h1>
-            <Expense />
-            {/* <ExpenseList /> */}
+            <Navbar />
+            <h1>I-O-You</h1>
+            <ExpenseList />
         </>
     );
 }

@@ -18,7 +18,7 @@ public class CORSFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		System.out.println("CORSFilter processing request..");
+//		System.out.println("CORSFilter processing request..");
 		HttpServletResponse resp = (HttpServletResponse) response;
 		resp.addHeader("Access-Control-Allow-Origin", "*");
 		resp.addHeader("Access-Control-Allow-Methods", "*");
@@ -32,12 +32,12 @@ public class CORSFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("CORSFilter initialized");
+//		System.out.println("CORSFilter initialized");
 	}
 
 	@Override
 	public void destroy() {
-		System.out.println("CORSFilter destroyed");
+//		System.out.println("CORSFilter destroyed");
 	}
 
 }

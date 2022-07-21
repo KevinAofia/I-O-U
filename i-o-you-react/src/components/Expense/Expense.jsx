@@ -1,43 +1,12 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-
-export const Expense = () => {
-    const [expense, setExpense] = useState([0]); //empty array by default
-
-
-    useEffect(() => {
-        //get request to the backend
-        //returns a promise
-        axios.get('http://localhost:8080/i-o-you/expenses/1')
-            .then(result => console.log(result.data));
-        // .then(result => setExpenses(result.data));
-    }, []); //fire up one backend request
-
+export const Expense = (props) => {
     return (
-        <>
-            <h1>Expense List</h1>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-                    {expense.map(() => { })}
-                    <tr>
-                        <td>
-                            value
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-            <h2>{expense}</h2>
-            <button onClick={() => alert("added expense")}>+</button>
-
-        </>
-
+        <tr>
+            <td>{props.expense.firstName}</td>
+            <td>{props.expense.lastName}</td>
+            <td>{props.expense.amount}</td>
+            <td>{props.expense.date}</td>
+            <td>{props.expense.reason}</td>
+            <td>{props.expense.status.status}</td>
+        </tr>
     );
-};
+}
