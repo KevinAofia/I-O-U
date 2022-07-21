@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState, useRef } from "react";
+import { ReimbursementStatusList } from "../ReimbursementStatus";
 
 export const Expense = (props) => {
+    const [expenseUpdating, setExpenseUpdating] = useState(false);
+
     const firstNameRef = useRef();
     const lastNameRef = useRef();
     const amountRef = useRef();
@@ -9,20 +12,12 @@ export const Expense = (props) => {
     const reasonRef = useRef();
     const statusRef = useRef();
 
-    const [expenseUpdated, setExpenseUpdated] = useState(false);
-    const [expenseUpdating, setExpenseUpdating] = useState(false);
-    // const [expenseDeleted, setExpenseDeleted] = useState(false);
+    const initializeUpdate = () => { setExpenseUpdating(true); }
+    const cancelUpdate = () => { setExpenseUpdating(false); }
 
-    const initializeUpdate = () => {setExpenseUpdating(true);}
-    const cancelUpdate = () => {setExpenseUpdating(false);}
-    
     const finalizeUpdate = async (id) => {
-
-        // console.log(props.expense.status.id);
-        // statusRef = props.expense.status.id;
-
         try {
-            await axios.put(
+            const { data } = await axios.put(
                 `http://localhost:8080/i-o-you/expenses/${id}`,
                 {
                     firstName: firstNameRef.current.value,
@@ -30,14 +25,23 @@ export const Expense = (props) => {
                     amount: amountRef.current.value,
                     date: dateRef.current.value,
                     reason: reasonRef.current.value,
-                    status: statusRef.current.value,
+                    status: {
+                        id: 3
+                    }
                 }
             );
+            console.log("--------------------------------");
+            console.log("--------------------------------");
+            console.log(data);
+            console.log("--------------------------------");
+            console.log("--------------------------------");
+            props.setExpenseUpdated(true);
+            setExpenseUpdating(false);
         }
         catch {
 
         }
-        
+
 
     }
 
@@ -54,20 +58,29 @@ export const Expense = (props) => {
 
     return (
         <tr>
-            {expenseUpdating ? <td><input name="firstName" ref={firstNameRef} placeholder={props.expense.firstName} /></td> : <td>{props.expense.firstName}</td>}
+            {expenseUpdating ? <td><input name="firstName" defaultValue={props.expense.firstName} ref={firstNameRef} placeholder={props.expense.firstName} /></td> : <td>{props.expense.firstName}</td>}
 
-            {expenseUpdating ? <td><input name="lastName" ref={lastNameRef} placeholder={props.expense.lastName} /></td> : <td>{props.expense.lastName}</td>}
+            {expenseUpdating ? <td><input name="lastName" defaultValue={props.expense.lastName} ref={lastNameRef} placeholder={props.expense.lastName} /></td> : <td>{props.expense.lastName}</td>}
 
-            {expenseUpdating ? <td><input name="amount" ref={amountRef} placeholder={props.expense.amount} /></td> : <td>{props.expense.amount}</td>}
+            {expenseUpdating ? <td><input name="amount" defaultValue={props.expense.amount} ref={amountRef} placeholder={props.expense.amount} /></td> : <td>{props.expense.amount}</td>}
 
-            {expenseUpdating ? <td><input name="date" ref={dateRef} placeholder={props.expense.date} /></td> : <td>{props.expense.date}</td>}
+            {expenseUpdating ? <td><input name="date" defaultValue={props.expense.date} ref={dateRef} placeholder={props.expense.date} /></td> : <td>{props.expense.date}</td>}
 
-            {expenseUpdating ? <td><input name="reason" ref={reasonRef} placeholder={props.expense.reason} /></td> : <td>{props.expense.reason}</td>}
+            {expenseUpdating ? <td><input name="reason" defaultValue={props.expense.reason} ref={reasonRef} placeholder={props.expense.reason} /></td> : <td>{props.expense.reason}</td>}
 
-            {expenseUpdating ? <td><input name="status" ref={statusRef} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>}
+            {/* keep this one until done */}
+            {/* {expenseUpdating ? <td><input name="status" defaultValue={props.expense.status.status} ref={statusRef} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>} */}
 
-            {expenseUpdating ? <><td><button onClick={() => finalizeUpdate(props.expense.id)}>submit</button> <button onClick={() => cancelUpdate()}>cancel</button></td></> : <td><button onClick={() => { initializeUpdate() }}>edit</button></td>}
+            {/* update here until done */}
+            {/* {expenseUpdating ? <td><input name="status" defaultValue={props.expense.status.status} ref={statusRef} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>} */}
+
+            {/* {expenseUpdating ? <td><input name="status" value={props.expense.status.status} onChange={(event) => console.log(event.target.value)} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>} */}
             
+            {expenseUpdating ? <ReimbursementStatusList/> : <td>{props.expense.status.status}</td>}
+
+
+            {expenseUpdating ? <><td><button onClick={() => finalizeUpdate(props.expense.id)}>submit</button><button onClick={() => cancelUpdate()}>cancel</button></td></> : <td><button onClick={() => { initializeUpdate() }}>edit</button></td>}
+
             <td><button onClick={() => { handleDelete(props.expense.id) }}>delete</button></td>
         </tr>
     );

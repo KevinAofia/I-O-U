@@ -16,11 +16,20 @@ public class ReimbursementStatusDAO {
 
 	private Connection connection;
 
-	public ReimbursementStatusDAO() throws SQLException {
+	public ReimbursementStatusDAO() {
 		String url = "jdbc:mysql://localhost:3306/ioyou";
 		String username = "root";
 		String password = "root";
-		this.connection = DriverManager.getConnection(url, username, password);
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.err.println("\n\nReimbursementStatusDAO: " + e + "\n\n");
+		}
+		try {
+			this.connection = DriverManager.getConnection(url, username, password);
+		} catch (SQLException e) {
+			System.err.println("\n\nReimbursementStatusDAO: " + e + "\n\n");
+		}
 	}
 
 	// CRUD
@@ -70,27 +79,7 @@ public class ReimbursementStatusDAO {
 			return null;
 		}
 	}
-	
-	/**
-	public List<ReimbursementStatus> findByStatusLike(String like) throws SQLException {
-		// set of statuses returned at the end
-		List<ReimbursementStatus> reimbursementStatuses = new ArrayList<ReimbursementStatus>();
 
-		String sql = "SELECT ReimbursementStatusId, Status FROM ReimbursementStatus WHERE Status LIKE ?;";
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setString(1, like);
-		ResultSet resultSet = statement.executeQuery();
-
-		// Create Java Objects from MySQL DB
-		while (resultSet.next()) {
-			// Create Java Object with extracted DB values and add to set
-			reimbursementStatuses.add(
-					new ReimbursementStatus(resultSet.getInt("ReimbursementStatusId"), resultSet.getString("Status")));
-		}
-		return reimbursementStatuses;
-	}
-	*/
-	
 	public List<ReimbursementStatus> findAll() throws SQLException {
 		// set of statuses returned at the end
 		List<ReimbursementStatus> reimbursementStatuses = new ArrayList<ReimbursementStatus>();
