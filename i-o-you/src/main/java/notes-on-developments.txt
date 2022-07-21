@@ -44,6 +44,8 @@ and JSON to Java to achieve a working API over HTTP
 Jackson libraries will provide a JSON processing library we can use
 ObjectMapper is the primarily used object to achieve this
 
+Be sure to handle CORS issues that may arise
+
 ----------------------------------------------------------------------------
 FRONTEND
 ----------------------------------------------------------------------------

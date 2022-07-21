@@ -19,14 +19,14 @@ import com.skillstorm.models.Expense;
 @WebServlet(urlPatterns = "/expenses/*")
 public class ExpenseIdServlet extends HttpServlet {
 
-	private ExpenseDAO expenseDAO = new ExpenseDAO();
+	private ExpenseDAO expenseIdDAO = new ExpenseDAO();
 
 	// Returns an expense
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = getExpenseId(req);
 		try {
-			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseDAO.findById(id)));
+			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseIdDAO.findById(id)));
 		} catch (JsonProcessingException e) {
 			System.err.println("JsonProcessingException: " + e);
 		} catch (IOException e) {
@@ -51,9 +51,9 @@ public class ExpenseIdServlet extends HttpServlet {
 			// strict update using FK constraint and mapped DB values
 			expense.setStatus(new ReimbursementStatusDAO().findById(expense.getStatus().getId()));
 
-			expenseDAO.update(expense);
+			expenseIdDAO.update(expense);
 
-			resp.getWriter().print(mapper.writeValueAsString(expenseDAO.findById(id)));
+			resp.getWriter().print(mapper.writeValueAsString(expenseIdDAO.findById(id)));
 			resp.setContentType("application/json");
 		} catch (SQLException e1) {
 			e1.printStackTrace();
@@ -67,8 +67,8 @@ public class ExpenseIdServlet extends HttpServlet {
 		int id = getExpenseId(req);
 
 		try {
-			expenseDAO.delete(expenseDAO.findById(id));
-			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseDAO.findAll()));
+			expenseIdDAO.delete(expenseIdDAO.findById(id));
+			resp.getWriter().println(new ObjectMapper().writeValueAsString(expenseIdDAO.findAll()));
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

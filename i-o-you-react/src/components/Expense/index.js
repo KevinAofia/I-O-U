@@ -1,3 +1,5 @@
 // barrel exporting
 
-export * from './ExpenseList';
+export * from './Expense';
+
+// export * from './ExpenseList';
