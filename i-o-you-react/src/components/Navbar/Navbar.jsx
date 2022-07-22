@@ -1,8 +1,10 @@
 export const Navbar = () => {
     return (
-        <nav>
+        <nav className="navbar">
             <div>
-                <h1>I-O-You</h1>
+                <h1 class="display-1">
+                    I-O-You
+                </h1>
             </div>
         </nav>
     );

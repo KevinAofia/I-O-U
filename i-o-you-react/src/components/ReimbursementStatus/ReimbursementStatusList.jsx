@@ -13,8 +13,8 @@ export const ReimbursementStatusList = () => {
 
     return (
         <>
-            <h5>Enter new status by Id(i.e. 2)</h5>
-            <table className="table table-striped">
+            <h5>Enter Id(i.e. 2)</h5>
+            <table className="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Id</th>

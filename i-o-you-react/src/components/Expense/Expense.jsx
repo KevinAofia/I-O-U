@@ -52,21 +52,21 @@ export const Expense = (props) => {
 
     return (
         <tr>
-            {expenseUpdating ? <td><input name="firstName" defaultValue={props.expense.firstName} ref={firstNameRef} placeholder={props.expense.firstName} /></td> : <td>{props.expense.firstName}</td>}
+            {expenseUpdating ? <td><input className="form-control" name="firstName" defaultValue={props.expense.firstName} ref={firstNameRef} placeholder={props.expense.firstName} /></td> : <td>{props.expense.firstName}</td>}
 
-            {expenseUpdating ? <td><input name="lastName" defaultValue={props.expense.lastName} ref={lastNameRef} placeholder={props.expense.lastName} /></td> : <td>{props.expense.lastName}</td>}
+            {expenseUpdating ? <td><input className="form-control" name="lastName" defaultValue={props.expense.lastName} ref={lastNameRef} placeholder={props.expense.lastName} /></td> : <td>{props.expense.lastName}</td>}
 
-            {expenseUpdating ? <td><input name="amount" defaultValue={props.expense.amount} ref={amountRef} placeholder={props.expense.amount} /></td> : <td>{props.expense.amount}</td>}
+            {expenseUpdating ? <td><input className="form-control" name="amount" defaultValue={props.expense.amount} ref={amountRef} placeholder={props.expense.amount} /></td> : <td>{props.expense.amount}</td>}
 
-            {expenseUpdating ? <td><input name="date" defaultValue={props.expense.date} ref={dateRef} placeholder={props.expense.date} /></td> : <td>{props.expense.date}</td>}
+            {expenseUpdating ? <td><input className="form-control" name="date" defaultValue={props.expense.date} ref={dateRef} placeholder={props.expense.date} /></td> : <td>{props.expense.date}</td>}
 
-            {expenseUpdating ? <td><input name="reason" defaultValue={props.expense.reason} ref={reasonRef} placeholder={props.expense.reason} /></td> : <td>{props.expense.reason}</td>}
+            {expenseUpdating ? <td><input className="form-control" name="reason" defaultValue={props.expense.reason} ref={reasonRef} placeholder={props.expense.reason} /></td> : <td>{props.expense.reason}</td>}
 
-            {expenseUpdating ? <td><input name="status" defaultValue={props.expense.status.id} ref={statusRef} /><ReimbursementStatusList /></td> : <td>{props.expense.status.status}</td>}
+            {expenseUpdating ? <td><input className="form-control" name="status" defaultValue={props.expense.status.id} ref={statusRef} /><ReimbursementStatusList /></td> : <td>{props.expense.status.status}</td>}
 
-            {expenseUpdating ? <><td><button onClick={() => finalizeUpdate(props.expense.id)}>submit</button><button onClick={() => cancelUpdate()}>cancel</button></td></> : <td><button onClick={() => { initializeUpdate() }}>edit</button></td>}
+            {expenseUpdating ? <><td><button className="btn btn-success" onClick={() => finalizeUpdate(props.expense.id)}>submit</button><button className="btn btn-warning" onClick={() => cancelUpdate()}>cancel</button></td></> : <td><button className="btn btn-primary" onClick={() => { initializeUpdate() }}>edit</button></td>}
 
-            <td><button onClick={() => { handleDelete(props.expense.id) }}>delete</button></td>
+            <td><button className="btn btn-danger" onClick={() => { handleDelete(props.expense.id) }}>delete</button></td>
         </tr>
     );
 }
@@ -102,28 +102,30 @@ export const CreateExpenseForm = () => {
     }
 
     return (
-        <form className="" onSubmit={handleCreation}>
-            <table className="table table-striped">
-                <thead>
-                    <tr >
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Reason</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input name="firstName" ref={firstNameRef} placeholder='First name' /></td>
-                        <td><input name="lastName" ref={lastNameRef} placeholder='Last name' /></td>
-                        <td><input name="amount" ref={amountRef} placeholder='Amount (i.e. $00.00)' /></td>
-                        <td><input name="date" ref={dateRef} placeholder='Date (MM-DD-YYY)' /></td>
-                        <td><input name="reason" ref={reasonRef} placeholder='Reason (i.e. lodging)' /></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button>Create Expense</button>
-        </form>
+        <>
+            <form className="" onSubmit={handleCreation}>
+                <table className="table table-bordered table-striped">
+                    <thead>
+                        <tr >
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input className="form-control" name="firstName" ref={firstNameRef} placeholder='First name' /></td>
+                            <td><input className="form-control" name="lastName" ref={lastNameRef} placeholder='Last name' /></td>
+                            <td><input className="form-control" name="amount" ref={amountRef} placeholder='Amount (i.e. $00.00)' /></td>
+                            <td><input className="form-control" name="date" ref={dateRef} placeholder='Date (MM-DD-YYY)' /></td>
+                            <td><input className="form-control" name="reason" ref={reasonRef} placeholder='Reason (i.e. lodging)' /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button className="btn btn-warning">Create Expense</button>
+            </form><br></br>
+        </>
     );
 }

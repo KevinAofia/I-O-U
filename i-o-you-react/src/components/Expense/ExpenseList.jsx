@@ -26,7 +26,7 @@ export const ExpenseList = () => {
         <>
             <CreateExpenseForm />
 
-            <table className="table table-striped">
+            <table className="table table-bordered table-striped">
                 <thead>
                     <tr >
                         <th>First Name</th>
