@@ -21,7 +21,7 @@ public class ExpenseIdServlet extends HttpServlet {
 
 	private ExpenseDAO expenseIdDAO = new ExpenseDAO();
 
-	// Returns an expense
+	// return an expense
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = getExpenseId(req);
@@ -37,7 +37,7 @@ public class ExpenseIdServlet extends HttpServlet {
 		resp.setContentType("application/json");
 	}
 
-	// Updates an expense
+	// updates an expense
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = getExpenseId(req); // strict update to this id only
@@ -46,7 +46,7 @@ public class ExpenseIdServlet extends HttpServlet {
 		InputStream requestBody = req.getInputStream();
 		Expense expense = mapper.readValue(requestBody, Expense.class); // map JSON to POJO
 
-		expense.setId(id); // strict update to using this id only
+		expense.setId(id); // strict update using this id only
 		try {
 			// strict update using FK constraint and mapped DB values
 			expense.setStatus(new ReimbursementStatusDAO().findById(expense.getStatus().getId()));
@@ -61,7 +61,7 @@ public class ExpenseIdServlet extends HttpServlet {
 
 	}
 
-	// Deletes an expense - MOVE TO /expense servlet
+	// delete an expense
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = getExpenseId(req);

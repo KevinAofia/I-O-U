@@ -77,5 +77,11 @@ Define our own App.js or App.jsx
 	by using named exports 'export const [AppName]' in declaration
 	1 default export per file
 	
+	
+----------------------------------------------------------------------------
+to launch project
+tomcat server for project must be running
+then run npm start in react application
+----------------------------------------------------------------------------
 
 

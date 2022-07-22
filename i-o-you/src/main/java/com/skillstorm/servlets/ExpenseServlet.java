@@ -35,7 +35,7 @@ public class ExpenseServlet extends HttpServlet {
 
 	}
 
-	// Creates an expense
+	// Create an expense
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {

@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { CreateExpense, Expense } from "./Expense";
+import { CreateExpenseForm, Expense } from "./Expense";
 
 export const ExpenseList = () => {
-    const [expenses, setExpenses] = useState([]); //empty array by default
+    const [expenses, setExpenses] = useState([]);
     const [expenseUpdated, setExpenseUpdated] = useState(false);
     const [expenseDeleted, setExpenseDeleted] = useState(false);
 
-
-
-    // hook into component lifecycles here
     useEffect(() => {
         axios.get(`http://localhost:8080/i-o-you/expenses`)
             .then(response => setExpenses(response.data));
@@ -27,8 +24,7 @@ export const ExpenseList = () => {
 
     return (
         <>
-            <h1>Expense List</h1>
-            <CreateExpense />
+            <CreateExpenseForm />
 
             <table className="table table-striped">
                 <thead>
@@ -47,14 +43,13 @@ export const ExpenseList = () => {
                     {expenses.map((expense) => {
                         return (
                             // passing object as props to expense component
-                            <Expense key={expense.id} 
-                            expense={expense} 
-                            // expenseUpdating={expenseUpdating} 
-                            // setExpenseUpdating={setExpenseUpdating} 
-                            expenseUpdated={expenseUpdated} 
-                            setExpenseUpdated={setExpenseUpdated} 
-                            expenseDeleted={expenseDeleted} 
-                            setExpenseDeleted={setExpenseDeleted}/>
+                            <Expense key={expense.id}
+                                expense={expense}
+                                expenseUpdated={expenseUpdated}
+                                setExpenseUpdated={setExpenseUpdated}
+                                expenseDeleted={expenseDeleted}
+                                setExpenseDeleted={setExpenseDeleted}
+                            />
                         );
                     })}
                 </tbody>

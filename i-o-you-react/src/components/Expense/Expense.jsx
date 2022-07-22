@@ -17,7 +17,7 @@ export const Expense = (props) => {
 
     const finalizeUpdate = async (id) => {
         try {
-            const { data } = await axios.put(
+            await axios.put(
                 `http://localhost:8080/i-o-you/expenses/${id}`,
                 {
                     firstName: firstNameRef.current.value,
@@ -26,20 +26,15 @@ export const Expense = (props) => {
                     date: dateRef.current.value,
                     reason: reasonRef.current.value,
                     status: {
-                        id: 3
+                        id: statusRef.current.value
                     }
                 }
             );
-            console.log("--------------------------------");
-            console.log("--------------------------------");
-            console.log(data);
-            console.log("--------------------------------");
-            console.log("--------------------------------");
             props.setExpenseUpdated(true);
             setExpenseUpdating(false);
         }
-        catch {
-
+        catch (err) {
+            console.error(err);
         }
 
 
@@ -55,7 +50,6 @@ export const Expense = (props) => {
         }
     }
 
-
     return (
         <tr>
             {expenseUpdating ? <td><input name="firstName" defaultValue={props.expense.firstName} ref={firstNameRef} placeholder={props.expense.firstName} /></td> : <td>{props.expense.firstName}</td>}
@@ -68,16 +62,7 @@ export const Expense = (props) => {
 
             {expenseUpdating ? <td><input name="reason" defaultValue={props.expense.reason} ref={reasonRef} placeholder={props.expense.reason} /></td> : <td>{props.expense.reason}</td>}
 
-            {/* keep this one until done */}
-            {/* {expenseUpdating ? <td><input name="status" defaultValue={props.expense.status.status} ref={statusRef} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>} */}
-
-            {/* update here until done */}
-            {/* {expenseUpdating ? <td><input name="status" defaultValue={props.expense.status.status} ref={statusRef} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>} */}
-
-            {/* {expenseUpdating ? <td><input name="status" value={props.expense.status.status} onChange={(event) => console.log(event.target.value)} placeholder={props.expense.status.id} /></td> : <td>{props.expense.status.status}</td>} */}
-            
-            {expenseUpdating ? <ReimbursementStatusList/> : <td>{props.expense.status.status}</td>}
-
+            {expenseUpdating ? <td><input name="status" defaultValue={props.expense.status.id} ref={statusRef} /><ReimbursementStatusList /></td> : <td>{props.expense.status.status}</td>}
 
             {expenseUpdating ? <><td><button onClick={() => finalizeUpdate(props.expense.id)}>submit</button><button onClick={() => cancelUpdate()}>cancel</button></td></> : <td><button onClick={() => { initializeUpdate() }}>edit</button></td>}
 
@@ -86,7 +71,7 @@ export const Expense = (props) => {
     );
 }
 
-export const CreateExpense = () => {
+export const CreateExpenseForm = () => {
     const firstNameRef = useRef();
     const lastNameRef = useRef();
     const amountRef = useRef();
@@ -101,7 +86,7 @@ export const CreateExpense = () => {
                 {
                     firstName: firstNameRef.current.value,
                     lastName: lastNameRef.current.value,
-                    amount: amountRef.current.value,
+                    amount: "$"+amountRef.current.value,
                     date: dateRef.current.value,
                     reason: reasonRef.current.value
                 }
@@ -134,7 +119,7 @@ export const CreateExpense = () => {
                         <td><input name="lastName" ref={lastNameRef} placeholder='Last name' /></td>
                         <td><input name="amount" ref={amountRef} placeholder='Amount (i.e. 00.00)' /></td>
                         <td><input name="date" ref={dateRef} placeholder='Date (MM-DD-YYY)' /></td>
-                        <td><input name="reason" ref={reasonRef} placeholder='Reason(i.e. lodging for business conference)' /></td>
+                        <td><input name="reason" ref={reasonRef} placeholder='Reason (i.e. lodging)' /></td>
                     </tr>
                 </tbody>
             </table>

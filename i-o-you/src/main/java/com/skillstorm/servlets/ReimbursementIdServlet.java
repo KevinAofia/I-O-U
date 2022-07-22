@@ -18,7 +18,6 @@ public class ReimbursementIdServlet extends HttpServlet {
 
 	private ReimbursementStatusDAO reimbursementStatusDAO = new ReimbursementStatusDAO();
 
-	// Returns an expense
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int id = getReimbursementStatusId(req);

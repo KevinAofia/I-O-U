@@ -23,6 +23,7 @@ public class ReimbursementStatus {
 		this.id = id;
 		this.status = status;
 	}
+
 	// Getters and Setters
 
 	public int getId() {
@@ -40,6 +41,7 @@ public class ReimbursementStatus {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	// Methods
 
 	@Override

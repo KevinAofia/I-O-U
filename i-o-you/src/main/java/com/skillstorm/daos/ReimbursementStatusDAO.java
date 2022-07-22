@@ -128,19 +128,4 @@ public class ReimbursementStatusDAO {
 			return false;
 		}
 	}
-
-//	public static void main(String[] args) throws SQLException {
-//		// FOR FUN TESTING AREA
-//		ReimbursementStatusDAO reimbursementStatusDAO = new ReimbursementStatusDAO();
-//		System.out.println(!reimbursementStatusDAO.getConnection().isClosed());
-//		System.out.println(reimbursementStatusDAO.findAll());
-//		System.out.println(reimbursementStatusDAO.findDefault());
-//		System.out.println(reimbursementStatusDAO.create(new ReimbursementStatus("Some New status")));
-//		ReimbursementStatus testUpdateDelete = reimbursementStatusDAO.findById(5);
-//		testUpdateDelete.setStatus("Change this status");
-//		System.out.println(reimbursementStatusDAO.update(testUpdateDelete));
-//		System.out.println(reimbursementStatusDAO.delete(testUpdateDelete));
-//		System.out.println(reimbursementStatusDAO.findByStatusLike("%d"));
-//	}
-
 }
