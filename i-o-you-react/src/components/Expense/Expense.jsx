@@ -86,7 +86,7 @@ export const CreateExpenseForm = () => {
                 {
                     firstName: firstNameRef.current.value,
                     lastName: lastNameRef.current.value,
-                    amount: "$"+amountRef.current.value,
+                    amount: amountRef.current.value,
                     date: dateRef.current.value,
                     reason: reasonRef.current.value
                 }
@@ -117,7 +117,7 @@ export const CreateExpenseForm = () => {
                     <tr>
                         <td><input name="firstName" ref={firstNameRef} placeholder='First name' /></td>
                         <td><input name="lastName" ref={lastNameRef} placeholder='Last name' /></td>
-                        <td><input name="amount" ref={amountRef} placeholder='Amount (i.e. 00.00)' /></td>
+                        <td><input name="amount" ref={amountRef} placeholder='Amount (i.e. $00.00)' /></td>
                         <td><input name="date" ref={dateRef} placeholder='Date (MM-DD-YYY)' /></td>
                         <td><input name="reason" ref={reasonRef} placeholder='Reason (i.e. lodging)' /></td>
                     </tr>

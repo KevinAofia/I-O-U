@@ -3923,3 +3923,8 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: start tag n
 2022-07-21 17:55:37,804 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\i-o-you\i-o-you\src\main\resources
 2022-07-21 17:55:37,806 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-07-21 17:55:37,806 [Worker-117: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\i-o-you\i-o-you\src\test\resources
+2022-07-21 20:41:36,375 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-07-21 20:41:41,031 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-21 20:41:41,032 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\i-o-you\i-o-you\src\main\resources
+2022-07-21 20:41:41,035 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-21 20:41:41,035 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Kaofi\OneDrive\Desktop\SkillStorm\Workspace\i-o-you\i-o-you\src\test\resources
